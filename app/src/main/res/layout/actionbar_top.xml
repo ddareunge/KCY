@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/top_constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#ffffff"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/notice_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="63dp"
+        android:src="@drawable/btn_eng"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tabbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/tabbar_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+<fragment
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    app:layout_constraintTop_toBottomOf="@+id/top_constraintLayout"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:id="@+id/map" />
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/now_place"
+    android:layout_width="320dp"
+    android:layout_height="44dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/round_corner_gray"
+    android:elevation="30dp"
+    android:orientation="horizontal"
+    android:shadowColor="#29000000"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/top_constraintLayout">
+
+    <TextView
+        style="@style/TextStyle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:lineHeight="12sp"
+        android:text="현위치"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/my_place"
+        style="@style/TextStyle4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:text="한성대입구역"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/search_view"
+    android:layout_width="320dp"
+    android:layout_height="44dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/round_corner_white"
+    android:elevation="30dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal"
+    android:shadowColor="#29000000"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/now_place">
+
+    <ImageView
+        android:id="@+id/search_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:src="@drawable/search_ic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/search_keyword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:background="@null"
+        android:hint="원하시는 지역이 어디신가요?"
+        android:lineHeight="16sp"
+        android:textColor="#707070"
+        android:textColorHint="#707070"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<SlidingDrawer
+    android:id="@+id/slide"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:allowSingleTap="true"
+    android:animateOnClick="true"
+    android:bottomOffset="5dp"
+    android:content="@+id/content"
+    android:handle="@+id/handle"
+    android:orientation="vertical"
+    app:layout_constraintTop_toBottomOf="@id/search_view"
+    app:layout_constraintBottom_toBottomOf="@+id/map"
+    android:topOffset="49dp"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/handle"
+        android:background="@drawable/sliding_handle"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <View
+            android:layout_width="45dp"
+            android:layout_height="5dp"
+            android:background="#dddddd"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/bike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/bike_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/userid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:text="따릉이님"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@+id/bike"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:text="반납까지 19분 남았어요"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:layout_marginTop="79dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@+id/bike"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFFFF"
+        android:orientation="vertical"
+        >
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</SlidingDrawer>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
