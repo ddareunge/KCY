@@ -1,5 +1,6 @@
 package com.example.ddareunge
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        tabbar.setOnClickListener {
+            val intent = Intent(this,MypageActivity::class.java)
+            startActivity(intent)
+        }
         val items = arrayOf("거리순","이름순")
         val myAapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items)
 

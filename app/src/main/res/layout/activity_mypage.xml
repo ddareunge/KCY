@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MypageActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/notice_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/logo_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login_btn"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="360dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_constraintLayout" />
+
+    <TextView
+        android:id="@+id/buy"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        tools:text="이용권 구매" />
+
+    <ImageView
+        android:id="@+id/firstImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="39dp"
+        android:src="@drawable/season_ticket_ic"
+        app:layout_constraintEnd_toStartOf="@+id/secondImg"
+        app:layout_constraintTop_toTopOf="@+id/secondImg" />
+
+    <TextView
+        android:id="@+id/firstText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2sp"
+        android:textColor="#000000"
+        android:layout_marginTop="4dp"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/firstImg"
+        app:layout_constraintStart_toStartOf="@+id/firstImg"
+        app:layout_constraintTop_toBottomOf="@+id/firstImg"
+        android:text="정기권" />
+
+    <ImageView
+        android:id="@+id/secondImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:src="@drawable/one_day_ticket_ic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/secondText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2sp"
+        android:layout_marginTop="4dp"
+        android:text="일일권"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/secondImg"
+        app:layout_constraintStart_toStartOf="@+id/secondImg"
+        app:layout_constraintTop_toBottomOf="@+id/secondImg" />
+
+    <ImageView
+        android:id="@+id/thirdImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:src="@drawable/group_ticket_ic"
+        app:layout_constraintStart_toEndOf="@+id/secondImg"
+        app:layout_constraintTop_toTopOf="@+id/secondImg" />
+
+    <TextView
+        android:id="@+id/thirdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2sp"
+        android:text="일일권"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/thirdImg"
+        app:layout_constraintStart_toStartOf="@+id/thirdImg"
+        app:layout_constraintTop_toBottomOf="@+id/thirdImg"/>
+
+    <ImageView
+        android:id="@+id/fourthImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="39dp"
+        android:src="@drawable/season_ticket_present_ic"
+        app:layout_constraintEnd_toStartOf="@+id/fifthImg"
+        app:layout_constraintTop_toTopOf="@+id/fifthImg" />
+
+    <TextView
+        android:id="@+id/fourthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2sp"
+        android:layout_marginTop="2dp"
+        android:text="정기권\n선물"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/fourthImg"
+        app:layout_constraintStart_toStartOf="@+id/fourthImg"
+        app:layout_constraintTop_toBottomOf="@+id/fourthImg" />
+
+    <ImageView
+        android:id="@+id/fifthImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/one_day_ticket_present_ic"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondText" />
+
+    <TextView
+        android:id="@+id/fifthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2sp"
+        android:text="일일권\n선물"
+        android:layout_marginTop="2dp"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/fifthImg"
+        app:layout_constraintStart_toStartOf="@+id/fifthImg"
+        app:layout_constraintTop_toBottomOf="@+id/fifthImg" />
+
+    <ImageView
+        android:id="@+id/sixthImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/user"
+        android:layout_marginStart="47dp"
+        app:layout_constraintStart_toEndOf="@+id/fifthImg"
+        app:layout_constraintTop_toTopOf="@+id/fifthImg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2sp"
+        android:text="비회원"
+        android:layout_marginTop="3dp"
+        android:textColor="#000000"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/sixthImg"
+        app:layout_constraintStart_toStartOf="@+id/sixthImg"
+        app:layout_constraintTop_toBottomOf="@+id/sixthImg" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mypage_rc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fifthText" />
+
+    <ImageView
+        android:id="@+id/rental_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rental_install_btn"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mypage_rc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
