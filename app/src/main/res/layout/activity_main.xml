@@ -172,13 +172,13 @@
             android:layout_height="11dp"
             android:layout_marginTop="90dp"
             android:layout_marginEnd="130dp"
-            android:background="#00e689"
+            android:background="#6900E689"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
         <View
             android:layout_width="45dp"
             android:layout_height="5dp"
-            android:background="#dddddd"
+            android:background="@drawable/round_corner_gray_small"
             android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
