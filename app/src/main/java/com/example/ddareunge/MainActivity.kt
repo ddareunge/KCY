@@ -3,18 +3,15 @@ package com.example.ddareunge
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.View
+import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.Toolbar
-import androidx.appcompat.app.ActionBar
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.example.ddareunge.data.PlaceItem
+import com.example.mysecondapp.server.GithubServicelmpl
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,38 +29,76 @@ class MainActivity : AppCompatActivity() {
 
         spinner.adapter = myAapter
 
+
+        myplace()
+    }
+
+    private fun myplace(){
+
         PlaceAdapter = PlaceAdapter(this)
         place_recyclerview.adapter=PlaceAdapter
         place_recyclerview.layoutManager = LinearLayoutManager(this)
 
-        PlaceAdapter.data = listOf(
-            PlaceItem(
-                PlaceName = "한성대 입구",
-                PlaceAddress = "서울시 성북구 성북동 177-31",
-                PlaceMeter = "10m"
-            ),
-            PlaceItem(
-                PlaceName = "성신여대 입구",
-                PlaceAddress = "서울시 성북구 성북동 177-31",
-                PlaceMeter = "10m"
-            ),
-            PlaceItem(
-                PlaceName = "혜화역",
-                PlaceAddress = "서울시 성북구 성북동 177-31",
-                PlaceMeter = "10m"
-            ),
-            PlaceItem(
-                PlaceName = "동대문역",
-                PlaceAddress = "서울시 성북구 성북동 177-31",
-                PlaceMeter = "10m"
-            ),
-            PlaceItem(
-                PlaceName = "한성대 입구",
-                PlaceAddress = "노원구 머시기",
-                PlaceMeter = "10m"
-            )
-        )
-        PlaceAdapter.notifyDataSetChanged()
-    }
 
+        GithubServicelmpl.service.getPlaces().enqueue (
+            onResponse = {
+                if(it.isSuccessful){
+                    val Places = it.body()!!
+                    PlaceAdapter.data = Places.data.station
+                    PlaceAdapter.notifyDataSetChanged()
+                }
+            }
+        )
+
+        val myplace: Call<PlaceItem> = GithubServicelmpl.service.getPlaces()
+
+        myplace.enqueue(
+            object: Callback<PlaceItem> {
+                override fun onFailure(call: Call<PlaceItem>, t: Throwable) {
+                    Log.e("error : ",t.toString())
+                }
+
+                override fun onResponse(
+                    call: Call<PlaceItem>,
+                    response: Response<PlaceItem>
+                ) {
+                    if(response.isSuccessful){
+                        val gitRepos = response.body()!!
+
+                        PlaceAdapter.data = gitRepos.data.station
+                        PlaceAdapter.notifyDataSetChanged()
+                    }
+                }
+            }
+        )
+
+//        PlaceAdapter.data = listOf(
+//            PlaceItem(
+//                PlaceName = "한성대 입구",
+//                PlaceAddress = "서울시 성북구 성북동 177-31",
+//                PlaceMeter = "10m"
+//            ),
+//            PlaceItem(
+//                PlaceName = "성신여대 입구",
+//                PlaceAddress = "서울시 성북구 성북동 177-31",
+//                PlaceMeter = "10m"
+//            ),
+//            PlaceItem(
+//                PlaceName = "혜화역",
+//                PlaceAddress = "서울시 성북구 성북동 177-31",
+//                PlaceMeter = "10m"
+//            ),
+//            PlaceItem(
+//                PlaceName = "동대문역",
+//                PlaceAddress = "서울시 성북구 성북동 177-31",
+//                PlaceMeter = "10m"
+//            ),
+//            PlaceItem(
+//                PlaceName = "한성대 입구",
+//                PlaceAddress = "노원구 머시기",
+//                PlaceMeter = "10m"
+//            )
+//        )
+//        PlaceAdapter.notifyDataSetChanged()
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.ddareunge
+package com.example.ddareunge.data
 
 data class MypageItem (
     var title : String

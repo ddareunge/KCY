@@ -3,6 +3,7 @@ package com.example.ddareunge
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ddareunge.data.MypageItem
 import kotlinx.android.synthetic.main.activity_mypage.*
 
 class MypageActivity : AppCompatActivity() {
@@ -12,10 +13,15 @@ class MypageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypage)
+        mypage()
 
+    }
+
+    private fun mypage(){
         MypageAdapter=MypageAdapter(this)
         mypage_rc.adapter=MypageAdapter
         mypage_rc.layoutManager = LinearLayoutManager(this)
+
 
         MypageAdapter.data = listOf(
             MypageItem(
@@ -36,7 +42,7 @@ class MypageActivity : AppCompatActivity() {
             MypageItem(
                 title = "시민의견수렴"
             )
-            )
+        )
         MypageAdapter.notifyDataSetChanged()
     }
 }

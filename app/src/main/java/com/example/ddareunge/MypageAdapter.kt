@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ddareunge.data.MypageItem
 
 class MypageAdapter (private val context:Context):RecyclerView.Adapter<MypageViewHolder>(){
     var data = listOf<MypageItem>()
